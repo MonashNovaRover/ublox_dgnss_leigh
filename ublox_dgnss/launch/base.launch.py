@@ -17,15 +17,15 @@ def generate_launch_description():
             {'CFG_MSGOUT_UBX_NAV_STATUS_USB': 5}]
 
   container1 = ComposableNodeContainer(
-    node_name='gps_base_container',
-    node_namespace='',
+    name='gps_base_container',
+    namespace='',
     package='rclcpp_components',
-    node_executable='component_container',
+    executable='component_container',
     composable_node_descriptions=[
       ComposableNode(
         package='ublox_dgnss_node',
-        node_plugin='ublox_dgnss::UbloxDGNSSNode',
-        node_name='gps_base',
+        plugin='ublox_dgnss::UbloxDGNSSNode',
+        name='gps_base',
         parameters=params
       )
     ]
